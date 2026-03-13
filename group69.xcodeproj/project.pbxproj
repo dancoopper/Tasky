@@ -20,6 +20,7 @@
 		185926E32F3648500024C9E8 /* TaskItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = 185926E22F3648500024C9E8 /* TaskItem.swift */; };
 		185926E52F3648780024C9E8 /* TaskDetailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 185926E42F3648780024C9E8 /* TaskDetailView.swift */; };
 		185926E72F3648B30024C9E8 /* TaskEditView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 185926E62F3648B30024C9E8 /* TaskEditView.swift */; };
+		185926E82F3648B30024C9E8 /* DataStore.swift in Sources */ = {isa = PBXBuildFile; fileRef = 185926E92F3648B30024C9E8 /* DataStore.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -56,6 +57,7 @@
 		185926E22F3648500024C9E8 /* TaskItem.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TaskItem.swift; sourceTree = "<group>"; };
 		185926E42F3648780024C9E8 /* TaskDetailView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TaskDetailView.swift; sourceTree = "<group>"; };
 		185926E62F3648B30024C9E8 /* TaskEditView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TaskEditView.swift; sourceTree = "<group>"; };
+		185926E92F3648B30024C9E8 /* DataStore.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DataStore.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -114,6 +116,7 @@
 				185926E42F3648780024C9E8 /* TaskDetailView.swift */,
 				185926E62F3648B30024C9E8 /* TaskEditView.swift */,
 				185926DE2F3646BA0024C9E8 /* Route.swift */,
+				185926E92F3648B30024C9E8 /* DataStore.swift */,
 				185926AE2F3640F60024C9E8 /* Assets.xcassets */,
 				185926B02F3640F60024C9E8 /* Preview Content */,
 			);
@@ -283,6 +286,7 @@
 				185926E72F3648B30024C9E8 /* TaskEditView.swift in Sources */,
 				185926D92F3642340024C9E8 /* RootView.swift in Sources */,
 				185926E32F3648500024C9E8 /* TaskItem.swift in Sources */,
+				185926E82F3648B30024C9E8 /* DataStore.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
