@@ -7,7 +7,7 @@
 
 import SwiftUI
 
-enum Route: Hashable {
+enum Route: Hashable, Codable {
     case detail(String)
     case edit(String?)
 }
