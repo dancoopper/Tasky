@@ -16,3 +16,4 @@ enum Route: Hashable, Codable {
     case detail(String)
     case edit(String?)
 }
+.

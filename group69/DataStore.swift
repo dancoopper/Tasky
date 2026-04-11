@@ -52,4 +52,4 @@ class DataStore: ObservableObject {
             // Intentionally silent: disk full / permission issues are rare in simulator; production apps might log.
         }
     }
-}
+}.

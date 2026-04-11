@@ -45,3 +45,4 @@ struct TaskItem: Identifiable, Codable, Equatable {
     var isCompleted: Bool = false
     var dueDate: Date = Date()
 }
+.

@@ -178,3 +178,4 @@ The domain model lives in `Taskitem.swift`:
 ---
 
 *This file was produced to satisfy course documentation requirements: technologies used (with links), data structures, persistence read path, persistence write path, and internal commenting policy in source files.*
+.

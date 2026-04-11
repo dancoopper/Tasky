@@ -151,4 +151,4 @@ struct TaskEditView_Previews: PreviewProvider {
         TaskEditView(taskId: nil)
             .environmentObject(DataStore())
     }
-}
+}.

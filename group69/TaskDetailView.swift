@@ -281,3 +281,4 @@ struct TaskDetailView_Previews: PreviewProvider {
             .environmentObject(DataStore())
     }
 }
+.
