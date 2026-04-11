@@ -309,4 +309,4 @@ struct TaskListView_Previews: PreviewProvider {
         TaskListView()
             .environmentObject(DataStore())
     }
-}
+}.

@@ -39,3 +39,4 @@ struct RootView_Previews: PreviewProvider {
             .environmentObject(DataStore())
     }
 }
+.
