@@ -2,7 +2,11 @@
 //  SplashView.swift
 //  group69
 //
-//  Created by Tech on 2026-02-06.
+//  Primary author: Samuel Browne (101481884)
+//
+//  Other editors:
+//  - Sokmontrey Sythat (101477705): Scale/opacity animation tuning.
+//  - Jonathan Cao (101480537): Safe area and layout checks.
 //
 
 import SwiftUI
@@ -29,6 +33,7 @@ struct SplashView: View {
             }
             .scaleEffect(scale)
             .opacity(opacity)
+            // Simple entrance animation; state changes drive `scaleEffect`/`opacity`.
             .onAppear {
                 withAnimation(.easeInOut(duration: 1.2)) {
                     scale = 1.0

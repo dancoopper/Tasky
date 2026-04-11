@@ -2,7 +2,11 @@
 //  group69Tests.swift
 //  group69Tests
 //
-//  Created by Tech on 2026-02-06.
+//  Primary author: Sokmontrey Sythat (101477705)
+//
+//  Other editors:
+//  - Jonathan Cao (101480537): XCTest target wiring and `@testable import`.
+//  - Samuel Browne (101481884): Placeholder test methods for future model tests.
 //
 
 import XCTest

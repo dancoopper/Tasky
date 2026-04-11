@@ -2,7 +2,11 @@
 //  RootView.swift
 //  group69
 //
-//  Created by Tech on 2026-02-06.
+//  Primary author: Jonathan Cao (101480537)
+//
+//  Other editors:
+//  - Sokmontrey Sythat (101477705): Splash vs main list switch timing.
+//  - Samuel Browne (101481884): Preview `environmentObject` setup.
 //
 
 import SwiftUI
@@ -18,6 +22,7 @@ struct RootView: View {
                 TaskListView()
             }
         }
+        // Delay hides splash before showing `TaskListView`; must run on main queue for UI updates.
         .onAppear {
             DispatchQueue.main.asyncAfter(deadline: .now() + 2) {
                 withAnimation {

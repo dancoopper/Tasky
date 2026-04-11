@@ -1,11 +1,16 @@
 //
-//  MainView.swift
+//  TaskListView.swift
 //  group69
 //
-//  Created by Tech on 2026-02-06.
+//  Primary author: Sokmontrey Sythat (101477705)
+//
+//  Other editors:
+//  - Jonathan Cao (101480537): `NavigationLink` overlay pattern, share sheet UIKit bridge.
+//  - Samuel Browne (101481884): `TaskRow` subtask progress and assignee avatars.
 //
 
 import SwiftUI
+import UIKit
 
 struct TaskListView: View {
     @EnvironmentObject private var dataStore: DataStore
@@ -23,6 +28,7 @@ struct TaskListView: View {
         dataStore.tasks.filter { $0.isCompleted }
     }
 
+    /// Deletes by index in the *filtered* section array, then resolves the real index in `dataStore.tasks` by `id` (indices differ).
     private func onDelete(at offsets: IndexSet, in tasks: [TaskItem]) {
         for offset in offsets {
             let taskToDelete = tasks[offset]
@@ -46,6 +52,7 @@ struct TaskListView: View {
         }
     }
 
+    /// SwiftUI has no share sheet; find key window’s root `UIViewController` and present `UIActivityViewController`.
     private func shareHistory() {
         let historyText = "Completed Tasks:\n" + completedTasks.map { "- \($0.title)" }.joined(separator: "\n")
         let av = UIActivityViewController(activityItems: [historyText], applicationActivities: nil)
@@ -70,6 +77,7 @@ struct TaskListView: View {
                 if !activeTasks.isEmpty {
                     Section("Active Tasks") {
                         ForEach(activeTasks) { task in
+                            // Invisible `NavigationLink` fills the row tap area without nesting a visible link inside `TaskRow`.
                             TaskRow(task: task, toggleComplete: { toggleComplete(task: task) })
                                 .background(
                                     NavigationLink(value: Route.detail(task.id.uuidString)) {
@@ -86,6 +94,7 @@ struct TaskListView: View {
                 if !completedTasks.isEmpty {
                     Section("History") {
                         ForEach(completedTasks) { task in
+                            // Invisible `NavigationLink` fills the row tap area without nesting a visible link inside `TaskRow`.
                             TaskRow(task: task, toggleComplete: { toggleComplete(task: task) })
                                 .background(
                                     NavigationLink(value: Route.detail(task.id.uuidString)) {
@@ -160,6 +169,7 @@ struct TaskRow: View {
         }
     }
 
+    /// Maps due date to human-readable urgency (overdue / today / tomorrow) for the subtitle line.
     private var dueDateInfo: (text: String, color: Color) {
         let now = Date()
         let calendar = Calendar.current

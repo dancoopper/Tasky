@@ -2,10 +2,15 @@
 //  TaskDetailView.swift
 //  group69
 //
-//  Created by Tech on 2026-02-06.
+//  Primary author: Jonathan Cao (101480537)
+//
+//  Other editors:
+//  - Sokmontrey Sythat (101477705): Subtask status `Menu` and comment list layout.
+//  - Samuel Browne (101481884): Share text formatting and detail tags styling.
 //
 
 import SwiftUI
+import UIKit
 
 struct TaskDetailView: View {
     let taskId: String
@@ -38,6 +43,7 @@ struct TaskDetailView: View {
         }
     }
 
+    /// Builds a plain-text summary and presents the system share sheet (same UIKit bridge as list history share).
     private func shareTask() {
         guard let task = task else { return }
         let shareText = """
@@ -49,6 +55,7 @@ struct TaskDetailView: View {
         Subtasks:
         \(task.subtasks.map { "[\($0.status == .completed ? "x" : ($0.status == .inProgress ? "/" : " "))] " + $0.title }.joined(separator: "\n"))
         """
+        // Subtask line uses ASCII-style markers for quick scanning in shared text.
         
         let av = UIActivityViewController(activityItems: [shareText], applicationActivities: nil)
         if let windowScene = UIApplication.shared.connectedScenes.first as? UIWindowScene,

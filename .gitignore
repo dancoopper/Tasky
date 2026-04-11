@@ -1,0 +1,9 @@
+# Local comparison / zip extracts (do not commit)
+_original_zip_extract/
+
+# Xcode / macOS
+.DS_Store
+xcuserdata/
+*.xcuserstate
+DerivedData/
+*.xcresult/

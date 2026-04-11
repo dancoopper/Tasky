@@ -2,7 +2,11 @@
 //  group69App.swift
 //  group69
 //
-//  Created by Tech on 2026-02-06.
+//  Primary author: Samuel Browne (101481884)
+//
+//  Other editors:
+//  - Sokmontrey Sythat (101477705): Scene-phase hooks for reload/save timing.
+//  - Jonathan Cao (101480537): `DataStore` / `SettingsStore` injection and color scheme.
 //
 
 import SwiftUI
@@ -19,6 +23,8 @@ struct group69App: App {
                 .environmentObject(dataStore)
                 .environmentObject(settingsStore)
                 .preferredColorScheme(settingsStore.isDarkMode ? .dark : .light)
+                // When returning to foreground, reload from disk in case another process touched the file.
+                // When leaving active state, persist so background kills do not lose edits.
                 .onChange(of: scenePhase) { phase in
                     if phase == .inactive {
                         dataStore.save()

@@ -2,7 +2,11 @@
 //  TaskEditView.swift
 //  group69
 //
-//  Created by Tech on 2026-02-06.
+//  Primary author: Samuel Browne (101481884)
+//
+//  Other editors:
+//  - Sokmontrey Sythat (101477705): Subtask list editing and `Picker` for status.
+//  - Jonathan Cao (101480537): Create vs update branch in `onSave`, assignee parsing.
 //
 
 import SwiftUI
@@ -22,6 +26,7 @@ struct TaskEditView: View {
     @State private var subtasks: [Subtask] = []
     @State private var newSubtaskTitle: String = ""
 
+    /// Parses comma-separated assignees; updates existing task by `taskId` or appends a new `TaskItem`.
     private func onSave() {
         let assignees = assigneesText.split(separator: ",").map { $0.trimmingCharacters(in: .whitespaces) }.filter { !$0.isEmpty }
         

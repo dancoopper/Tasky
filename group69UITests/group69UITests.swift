@@ -2,7 +2,11 @@
 //  group69UITests.swift
 //  group69UITests
 //
-//  Created by Tech on 2026-02-06.
+//  Primary author: Jonathan Cao (101480537)
+//
+//  Other editors:
+//  - Sokmontrey Sythat (101477705): Launch and navigation smoke test scaffolding.
+//  - Samuel Browne (101481884): `measure` / launch performance template.
 //
 
 import XCTest
